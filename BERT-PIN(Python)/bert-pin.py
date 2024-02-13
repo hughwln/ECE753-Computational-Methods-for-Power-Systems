@@ -27,7 +27,8 @@ class Profile_Dataset(Dataset):
 
 def showmaskeddata():
     raw_data = pd.read_csv('../data/load_temperature_masked.csv', index_col=0)
-    plt.plot(raw_data.loc[:, 'load'].to_numpy(), label='masked')
+    raw_data.index = pd.to_datetime(raw_data.index)
+    plt.plot(raw_data.loc['2018-3-18', 'load'].to_numpy(), label='masked')
     plt.show()
 
 def generate_data():
@@ -81,7 +82,7 @@ def read_data():
     return norm_set, pmax, tmax
 
 def run_bert_pin():
-    gt = pd.read_csv('gt.csv', header=None)
+    gt = pd.read_csv('../data/gt.csv', header=None)
     gt_np = gt.to_numpy()
 
     norm_set, pmax, tmax = read_data()
