@@ -82,12 +82,12 @@ def read_data():
     return norm_set, pmax, tmax
 
 def run_bert_pin():
-    gt = pd.read_csv('../data/gt.csv', header=None)
-    gt_np = gt.to_numpy()
+    # gt = pd.read_csv('../data/gt.csv', header=None)
+    # gt_np = gt.to_numpy()
 
     norm_set, pmax, tmax = read_data()
-    gt_np = gt_np / pmax
-    gt_np = gt_np.reshape((5, 16))
+    # gt_np = gt_np / pmax
+    # gt_np = gt_np.reshape((5, 16))
     testset = Profile_Dataset(data=norm_set, dim_input=96)
     testloader = DataLoader(testset, batch_size=5, num_workers=0, shuffle=False)
 
@@ -137,7 +137,7 @@ def run_bert_pin():
 
             # draw output data
             ax.plot(x, pre_np_bert[j, patch_bgn:patch_end + 1], 'r', linewidth=1, label='BERT-PIN')
-            ax.plot(np.arange(40, 56), gt_np[j], 'g', linewidth=1, label="GT")
+            # ax.plot(np.arange(40, 56), gt_np[j], 'g', linewidth=1, label="GT")
 
             plt.ylim(y_min, y_max)
             plt.xticks([])
