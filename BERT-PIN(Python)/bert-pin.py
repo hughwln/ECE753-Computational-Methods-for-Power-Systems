@@ -96,7 +96,7 @@ def run_bert_pin():
     heads = 2
     transformer = model.Transformer(src_vocab_size=K + heads, embed_size=K + heads, heads=heads, num_layers=2,
                                     forward_expansion=heads, max_length=96, device=device).to(device)
-    transformer.load_state_dict(torch.load('encoder_100.pth'))
+    transformer.load_state_dict(torch.load('encoder_100.pth', map_location=device))
     output_list = []
 
     for i, data in enumerate(testloader):
