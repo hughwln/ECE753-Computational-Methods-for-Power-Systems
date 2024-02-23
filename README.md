@@ -13,7 +13,10 @@ example.m  a simple example code to restore missing values. You can refer to it 
 ### /BERT-PIN(Python)
 **This part is not mandatory. It's another example in python.**
 
-A simplified version of BERT-PIN, for full version (this homework doesn't need it) you can refer to https://github.com/hughwln/BERT-PIN_public.
+If you use this code, please cite this paper:
+_Yi Hu, Kai Ye, Hyeonjin Kim, and Ning Lu, “BERT-PIN: A BERT-based Framework for Recovering Missing Data Segments in Time-series Load Profiles”, available at http://arxiv.org/abs/2310.17742_
+
+This is a simplified version of BERT-PIN, for full version (this homework doesn't need it) you can refer to https://github.com/hughwln/BERT-PIN_public.
 
 It's a well-trained model, you can run _bert-pin.py_ directly and get a good result.
 
